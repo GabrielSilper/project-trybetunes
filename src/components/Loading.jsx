@@ -5,7 +5,7 @@ export default class Loading extends Component {
     return (
       <div className="Loading">
         <div className="loading-logo" />
-        <p>Carregando...</p>
+        <p className="loading-text">Carregando...</p>
       </div>
     );
   }

@@ -11,6 +11,42 @@ body {
   background-color: rgb(21, 21, 21);
 }
 
+/* --------------Loading----------------- */
+.Loading{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-logo{
+  width: 150px;
+  height: 150px;
+  background-color: transparent;
+  display: inline-block;
+  border-radius: 100%;
+  border: 11px solid #4356ff;
+  border-top: 11px solid #7b0ce9;
+  animation: loading 1s infinite;
+}
+
+.loading-text {
+  font-size: 70px;
+  color: white;
+}
+
+@keyframes loading {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
 /* --------------Login----------------- */
 .Login {
   width: 100%;
