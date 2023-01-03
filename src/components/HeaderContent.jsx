@@ -8,6 +8,9 @@ export default class HeaderContent extends Component {
     const { name } = user;
     return (
       <nav className="HeaderContent">
+        <div className="header-logo">
+          <span>TrybeTunes</span>
+        </div>
         <ul className="nav-links">
           <li>
             <Link
@@ -33,11 +36,10 @@ export default class HeaderContent extends Component {
               data-testid="link-to-profile"
               className="link-navbar"
             >
-              Perfil
+              <span data-testid="header-user-name">{name}</span>
             </Link>
           </li>
         </ul>
-        <p data-testid="header-user-name">{name}</p>
       </nav>
     );
   }

@@ -40,9 +40,9 @@ export default class Login extends Component {
         ) : (
           <div className="Login">
             <div className="login-logo">
-              <img src={ wave } className="headphone-png" alt="kjshdfhskjdf" />
+              <img src={ wave } className="headphone-png" alt="headphone icon" />
               <h1 className="logo-title">TrybeTunes</h1>
-              <img src={ wave } className="headphone-png" alt="kjshdfhskjdf" />
+              <img src={ wave } className="headphone-png" alt="headphone icon" />
             </div>
             <form action="" className="login-card" autoComplete="off">
               <label htmlFor="login-name-input">

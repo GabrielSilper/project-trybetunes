@@ -14,7 +14,7 @@ body {
 }
 
 /* --------------Loading----------------- */
-.Loading{
+.Loading {
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -23,21 +23,7 @@ body {
   justify-content: center;
 }
 
-/* --------------HeaderContent----------------- */
-.HeaderContent{
-  background-color: aliceblue;
-  width: 250px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.link-navbar{
-  text-decoration: none;
-  color: green
-}
-
-.loading-logo{
+.loading-logo {
   width: 150px;
   height: 150px;
   background-color: transparent;
@@ -54,14 +40,23 @@ body {
 }
 
 @keyframes loading {
-  0%{
+  0% {
     transform: rotate(0deg);
   }
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
 
+/* --------------HeaderContent----------------- */
+.HeaderContent {
+  background-color: rgb(40, 40, 40);
+  width: 15%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+}
 
 /* --------------Login----------------- */
 .Login {
@@ -101,7 +96,6 @@ body {
   gap: 20px;
   align-items: center;
   justify-content: center;
-  
 }
 
 .login-input {
@@ -116,7 +110,7 @@ body {
   outline: none;
 }
 
-.login-button{
+.login-button {
   padding: 10px 60px;
   border-radius: 50px;
   border: none;
@@ -139,12 +133,7 @@ body {
 }
 
 .login-button:disabled {
-  background-image: linear-gradient(
-    to right,
-    #c9c9c9,
-    #616161,
-    #474747
-  );
+  background-image: linear-gradient(to right, #c9c9c9, #616161, #474747);
   color: rgb(63, 62, 62);
   scale: 0.95;
 }
