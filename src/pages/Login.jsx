@@ -1,14 +1,14 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import Footer from '../components/Footer';
-import Loading from '../components/Loading';
-import wave from '../images/wave.png';
-import { createUser } from '../services/userAPI';
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import Footer from "../components/Footer";
+import Loading from "../components/Loading";
+import wave from "../images/wave.png";
+import { createUser } from "../services/userAPI";
 
 export default class Login extends Component {
   state = {
     buttonDisabled: true,
-    name: '',
+    name: "",
     isLoading: false,
   };
 
@@ -17,7 +17,7 @@ export default class Login extends Component {
     const { history } = this.props;
     this.setState({ isLoading: true }, async () => {
       await createUser({ name });
-      history.push('/search');
+      history.push("/search");
     });
   };
 
@@ -31,6 +31,10 @@ export default class Login extends Component {
     this.setState({ buttonDisabled: !nameOk });
   };
 
+  stopDefAction = (evt) => {
+    evt.preventDefault();
+  };
+
   render() {
     const { buttonDisabled, isLoading } = this.state;
     return (
@@ -40,11 +44,11 @@ export default class Login extends Component {
         ) : (
           <div className="Login">
             <div className="login-logo">
-              <img src={ wave } className="headphone-png" alt="headphone icon" />
+              <img src={wave} className="headphone-png" alt="headphone icon" />
               <h1 className="logo-title">TrybeTunes</h1>
-              <img src={ wave } className="headphone-png" alt="headphone icon" />
+              <img src={wave} className="headphone-png" alt="headphone icon" />
             </div>
-            <form action="" className="login-card" autoComplete="off">
+            <form action="" className="login-card" autoComplete="off" onSubmit={this.stopDefAction}>
               <label htmlFor="login-name-input">
                 <input
                   type="text"
@@ -52,15 +56,15 @@ export default class Login extends Component {
                   data-testid="login-name-input"
                   id="login-name-input"
                   className="login-input"
-                  onChange={ this.handleChange }
+                  onChange={this.handleChange}
                 />
               </label>
               <button
                 type="button"
                 className="login-button"
                 data-testid="login-submit-button"
-                disabled={ buttonDisabled }
-                onClick={ this.handleClick }
+                disabled={buttonDisabled}
+                onClick={this.handleClick}
               >
                 Entrar
               </button>

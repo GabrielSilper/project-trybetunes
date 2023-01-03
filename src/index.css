@@ -6,6 +6,7 @@
   box-sizing: border-box;
   font-family: "Ubuntu", sans-serif;
   text-decoration: none;
+  outline: none;
 }
 
 body {
@@ -190,6 +191,7 @@ body {
   color: white;
   font-size: 15px;
   font-weight: 700;
+  transition: 0.4s;
 }
 
 .login-button:active {
@@ -203,7 +205,16 @@ body {
 }
 
 /* --------------SearchContent----------------- */
+.search-container {
+  margin-top: 85px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
 
+.search-input {
+  width: 500px;
+}
 
 /* --------------Footer----------------- */
 .Footer {

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { getUser } from '../services/userAPI';
 import HeaderContent from './HeaderContent';
@@ -30,3 +31,7 @@ export default class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  changeLoadContent: PropTypes.func.isRequired,
+};
