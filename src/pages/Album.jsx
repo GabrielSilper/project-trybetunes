@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 
 export default class Album extends Component {
@@ -6,6 +7,7 @@ export default class Album extends Component {
     return (
       <div data-testid="page-album">
         <Header />
+        <Footer />
       </div>
     );
   }

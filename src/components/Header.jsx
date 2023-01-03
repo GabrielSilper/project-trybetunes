@@ -14,8 +14,11 @@ export default class Header extends Component {
   }
 
   fetchAPI = async () => {
+    const { changeLoadContent } = this.props;
     const user = await getUser();
-    this.setState({ user, headerLoading: false });
+    this.setState({ user, headerLoading: false }, () => {
+      changeLoadContent();
+    });
   };
 
   render() {

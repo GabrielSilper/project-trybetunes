@@ -14,6 +14,14 @@ body {
   height: 100vh;
 }
 
+/* Para deixar as páginas com um tamanho padrão para mostrar o sidebar juntamente com o conteúdo. */
+.default-page {
+  width: 85%;
+  min-height: 100vh;
+  position: absolute;
+  right: 0;
+}
+
 /* --------------Loading----------------- */
 .Loading {
   width: 100%;
@@ -51,6 +59,8 @@ body {
 
 /* --------------HeaderContent----------------- */
 .HeaderContent {
+  position: fixed;
+  left: 0;
   background-color: rgb(40, 40, 40);
   width: 15%;
   height: 100vh;
@@ -191,6 +201,9 @@ body {
   color: rgb(63, 62, 62);
   scale: 0.95;
 }
+
+/* --------------SearchContent----------------- */
+
 
 /* --------------Footer----------------- */
 .Footer {

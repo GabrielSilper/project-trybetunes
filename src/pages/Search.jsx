@@ -1,19 +1,22 @@
-import React, { Component } from 'react';
-import Header from '../components/Header';
-import Loading from '../components/Loading';
-import Footer from '../components/Footer';
+import React, { Component } from "react";
+import Header from "../components/Header";
+import SearchContent from "../components/SearchContent";
 
 export default class Search extends Component {
   state = {
-    isLoading: false,
+    isLoadingContent: true,
+  };
+
+  changeLoadContent = () => {
+    this.setState({ isLoadingContent: false });
   };
 
   render() {
-    const { isLoading } = this.state;
+    const { isLoadingContent } = this.state;
     return (
       <div data-testid="page-search">
-        { isLoading ? <Loading /> : <Header />}
-        <Footer />
+        <Header changeLoadContent={this.changeLoadContent}/>
+        {!isLoadingContent && <SearchContent />}
       </div>
     );
   }
