@@ -1,18 +1,20 @@
-import PropTypes from "prop-types";
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import wave from "../images/wave.png";
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import wave from '../images/wave.png';
+import defaultPhoto from '../images/defaultwrg.png';
 
 export default class HeaderContent extends Component {
   render() {
     const { user } = this.props;
-    const { name } = user;
+    const { name, image } = user;
+    const perfilPhoto = image === '' ? defaultPhoto : image;
     return (
       <nav className="HeaderContent">
         <div className="header-logo">
-          <img src={wave} alt="wave icon" className="wave-icon" />
+          <img src={ wave } alt="wave icon" className="nav-icon" />
           <span>TrybeTunes</span>
-          <img src={wave} alt="wave icon" className="wave-icon" />
+          <img src={ wave } alt="wave icon" className="nav-icon" />
         </div>
         <div className="nav-links">
           <div className="teste-item">
@@ -39,6 +41,11 @@ export default class HeaderContent extends Component {
               data-testid="link-to-profile"
               className="nav-item"
             >
+              <img
+                src={ perfilPhoto }
+                alt={ `Foto de ${name}` }
+                className="perfil nav-icon"
+              />
               <span data-testid="header-user-name">{name}</span>
             </Link>
           </div>
@@ -51,5 +58,6 @@ export default class HeaderContent extends Component {
 HeaderContent.propTypes = {
   user: PropTypes.shape({
     name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
   }).isRequired,
 };
