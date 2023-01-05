@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import Header from "../components/Header";
-import SearchContent from "../components/SearchContent";
-import searchAlbumsAPI from "../services/searchAlbumsAPI";
+import React, { Component } from 'react';
+import Header from '../components/Header';
+import SearchContent from '../components/SearchContent';
+import searchAlbumsAPI from '../services/searchAlbumsAPI';
 
 export default class Search extends Component {
   state = {
     isLoadingContent: true,
     isLoading: false,
-    artist: "",
+    artist: '',
     buttonDisabled: true,
     result: [],
   };
@@ -37,16 +37,17 @@ export default class Search extends Component {
   };
 
   render() {
-    const { isLoadingContent, buttonDisabled, isLoading } = this.state;
+    const { isLoadingContent, buttonDisabled, isLoading, result } = this.state;
     return (
       <div data-testid="page-search">
-        <Header changeLoadContent={this.changeLoadContent} />
+        <Header changeLoadContent={ this.changeLoadContent } />
         {!isLoadingContent && (
           <SearchContent
-            handleChange={this.handleChange}
-            handleClick={this.handleClick}
-            buttonDisabled={buttonDisabled}
-            isLoading={isLoading}
+            handleChange={ this.handleChange }
+            handleClick={ this.handleClick }
+            buttonDisabled={ buttonDisabled }
+            isLoading={ isLoading }
+            albums={ result }
           />
         )}
       </div>
