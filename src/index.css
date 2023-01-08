@@ -11,13 +11,11 @@
 
 body {
   background-color: rgb(21, 21, 21);
-  width: 100vw;
-  height: 100vh;
 }
 
 /* Para deixar as páginas com um tamanho padrão para mostrar o sidebar juntamente com o conteúdo. */
 .default-page {
-  width: 85%;
+  width: 83.94vw;
   min-height: 100vh;
   position: absolute;
   right: 0;
@@ -63,7 +61,7 @@ body {
   position: fixed;
   left: 0;
   background-color: rgb(40, 40, 40);
-  width: 15%;
+  width: 15vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -71,7 +69,7 @@ body {
 }
 
 .header-logo {
-  height: 120px;
+  height: 20%;
   display: flex;
   gap: 10px;
   justify-content: center;
@@ -94,7 +92,7 @@ body {
 }
 
 .nav-links {
-  height: 500px;
+  height: 80%;
   display: flex;
   list-style: none;
   flex-direction: column;
@@ -214,6 +212,73 @@ body {
 
 .search-input {
   width: 500px;
+}
+
+/* --------------Albums----------------- */
+.albums-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.albums-container>p:nth-child(1) {
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.albums-container>p:nth-child(2) {
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.AlbumCard {
+  width: 60%;
+  display: flex;
+  gap: 12px;
+  border-radius: 8px;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    to right,
+    #4356ff,
+    #4a4eff,
+    #5645ff,
+    #6836ff,
+    #7928ff,
+    #8b1aff
+  );
+}
+
+.AlbumCard>div:nth-child(1){
+  display: flex;
+  align-items: center;
+}
+
+.AlbumCard>div:nth-child(2){
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  height: 50%;
+  width: 60%;
+}
+
+.album-content-text {
+  color: white;
+  font-weight: 500;
+}
+
+.link {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
 
 /* --------------Footer----------------- */

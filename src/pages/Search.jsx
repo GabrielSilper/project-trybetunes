@@ -8,6 +8,8 @@ export default class Search extends Component {
     isLoadingContent: true,
     isLoading: false,
     artist: '',
+    search: '',
+    triggerSearch: false,
     buttonDisabled: true,
     result: [],
   };
@@ -28,16 +30,27 @@ export default class Search extends Component {
 
   handleClick = () => {
     const { artist } = this.state;
-    this.setState({ isLoading: true }, async () => {
+    this.setState({ isLoading: true, search: artist }, async () => {
       const result = await searchAlbumsAPI(artist);
       this.setState({ result }, () => {
-        this.setState({ isLoading: false });
+        this.setState(
+          { isLoading: false, triggerSearch: true, artist: '' },
+          this.buttonValidation,
+        );
       });
     });
   };
 
   render() {
-    const { isLoadingContent, buttonDisabled, isLoading, result } = this.state;
+    const {
+      isLoadingContent,
+      buttonDisabled,
+      isLoading,
+      result,
+      triggerSearch,
+      artist,
+      search,
+    } = this.state;
     return (
       <div data-testid="page-search">
         <Header changeLoadContent={ this.changeLoadContent } />
@@ -48,6 +61,9 @@ export default class Search extends Component {
             buttonDisabled={ buttonDisabled }
             isLoading={ isLoading }
             albums={ result }
+            triggerSearch={ triggerSearch }
+            artist={ artist }
+            search={ search }
           />
         )}
       </div>

@@ -33,5 +33,9 @@ export default class Header extends Component {
 }
 
 Header.propTypes = {
-  changeLoadContent: PropTypes.func.isRequired,
+  changeLoadContent: PropTypes.func,
+};
+
+Header.defaultProps = {
+  changeLoadContent: () => true,
 };

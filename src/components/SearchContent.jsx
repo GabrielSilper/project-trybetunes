@@ -1,31 +1,39 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import AlbumCard from './AlbumCard';
 import Footer from './Footer';
 import Loading from './Loading';
 
 export default class SearchContent extends Component {
   listAlbums = () => {
-    const { albums } = this.props;
+    const { albums, search } = this.props;
     if (albums.length <= 0) {
       return (
         <div className="albums-container">
-          <p>{'Resultado de álbuns de: '}</p>
+          <p>{`Resultado de álbuns de: ${search}`}</p>
           <p>Nenhum álbum foi encontrado</p>
         </div>
       );
     }
     return (
       <div className="albums-container">
-        <p>{'Resultado de álbuns de: '}</p>
+        <p>{`Resultado de álbuns de: ${search}`}</p>
         {albums.map((song) => (
-          <li>{song.artistName}</li>
+          <AlbumCard key={ song.collectionId } song={ song } />
         ))}
       </div>
     );
   };
 
   render() {
-    const { handleChange, handleClick, buttonDisabled, isLoading } = this.props;
+    const {
+      handleChange,
+      handleClick,
+      buttonDisabled,
+      isLoading,
+      triggerSearch,
+      artist,
+    } = this.props;
     return (
       <div className="default-page">
         {isLoading ? (
@@ -39,6 +47,7 @@ export default class SearchContent extends Component {
                 placeholder="Nome do Artista"
                 className="search-input login-input"
                 onChange={ handleChange }
+                value={ artist }
               />
               <button
                 type="button"
@@ -50,7 +59,7 @@ export default class SearchContent extends Component {
                 Pesquisar
               </button>
             </div>
-            {this.listAlbums()}
+            {triggerSearch && this.listAlbums()}
             <Footer />
           </div>
         )}
@@ -60,12 +69,12 @@ export default class SearchContent extends Component {
 }
 
 SearchContent.propTypes = {
-  albums: PropTypes.shape({
-    length: PropTypes.number,
-    map: PropTypes.func,
-  }).isRequired,
+  albums: PropTypes.arrayOf(PropTypes.string).isRequired,
+  artist: PropTypes.string.isRequired,
   buttonDisabled: PropTypes.bool.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleClick: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
+  search: PropTypes.string.isRequired,
+  triggerSearch: PropTypes.bool.isRequired,
 };
