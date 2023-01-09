@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 export default class AlbumCard extends Component {
   render() {
-    const { song } = this.props;
+    const { album } = this.props;
     const {
       artworkUrl100,
       collectionName,
       artistName,
       collectionId,
       trackCount,
-    } = song;
+    } = album;
     const maxChar = 70;
     const artistNameCondition = artistName.length > maxChar;
     const artistNameSliced = `${artistName.slice(0, maxChar)}...`;
@@ -38,7 +38,7 @@ export default class AlbumCard extends Component {
 }
 
 AlbumCard.propTypes = {
-  song: PropTypes.shape({
+  album: PropTypes.shape({
     artistName: PropTypes.string.isRequired,
     artworkUrl100: PropTypes.string.isRequired,
     collectionId: PropTypes.number.isRequired,

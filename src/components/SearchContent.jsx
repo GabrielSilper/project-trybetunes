@@ -18,8 +18,8 @@ export default class SearchContent extends Component {
     return (
       <div className="albums-container">
         <p>{`Resultado de álbuns de: ${search}`}</p>
-        {albums.map((song) => (
-          <AlbumCard key={ song.collectionId } song={ song } />
+        {albums.map((album) => (
+          <AlbumCard key={ album.collectionId } album={ album } />
         ))}
       </div>
     );
