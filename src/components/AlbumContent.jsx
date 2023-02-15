@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Footer from './Footer';
 import Loading from './Loading';
 import MusicCard from './MusicCard';
 
@@ -33,7 +32,6 @@ export default class AlbumContent extends Component {
                 return false;
               })}
             </div>
-            <Footer />
           </div>
         )}
       </div>

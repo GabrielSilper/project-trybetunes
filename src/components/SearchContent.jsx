@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import AlbumCard from './AlbumCard';
-import Footer from './Footer';
 import Loading from './Loading';
 
 export default class SearchContent extends Component {
@@ -60,7 +59,6 @@ export default class SearchContent extends Component {
               </button>
             </div>
             {triggerSearch && this.listAlbums()}
-            <Footer />
           </div>
         )}
       </div>

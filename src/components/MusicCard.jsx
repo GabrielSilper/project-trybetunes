@@ -6,7 +6,7 @@ export default class MusicCard extends Component {
     const { song } = this.props;
     const { trackName, previewUrl } = song;
     return (
-      <div>
+      <div className="MusicCard">
         <p>{trackName}</p>
         <audio data-testid="audio-component" src={ previewUrl } controls>
           <track kind="captions" />
@@ -15,6 +15,7 @@ export default class MusicCard extends Component {
           <code>audio</code>
           .
         </audio>
+        <input type="checkbox" name="" id="" />
       </div>
     );
   }
