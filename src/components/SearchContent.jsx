@@ -67,7 +67,7 @@ export default class SearchContent extends Component {
 }
 
 SearchContent.propTypes = {
-  albums: PropTypes.arrayOf(PropTypes.string).isRequired,
+  albums: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   artist: PropTypes.string.isRequired,
   buttonDisabled: PropTypes.bool.isRequired,
   handleChange: PropTypes.func.isRequired,
