@@ -1,19 +1,382 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+  text-decoration: none;
+  outline: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: rgb(21, 21, 21);
 }
 
-.loading {
+/* Para deixar as páginas com um tamanho padrão para mostrar o sidebar juntamente com o conteúdo. */
+.default-page {
+  width: 83.94vw;
+  min-height: 100vh;
+  position: absolute;
+  right: 0;
+}
+
+/* --------------Loading----------------- */
+.Loading {
+  width: 100%;
+  min-height: 95vh;
+  display: flex;
+  gap: 30px;
   align-items: center;
+  justify-content: center;
+}
+
+.loading-logo {
+  width: 150px;
+  height: 150px;
+  background-color: transparent;
+  display: inline-block;
+  border-radius: 100%;
+  border: 11px solid #4356ff;
+  border-top: 11px solid #7b0ce9;
+  animation: loading 1s infinite;
+}
+
+.loading-text {
+  font-size: 70px;
+  color: white;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* --------------HeaderContent----------------- */
+.HeaderContent {
+  position: fixed;
+  left: 0;
+  background-color: rgb(40, 40, 40);
+  width: 15vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+}
+
+.header-logo {
+  height: 20%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo span {
+  font-size: 120%;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-icon {
+  width: 35px;
+}
+
+.perfil {
+  border-radius: 50%;
+  border: 3px white solid;
+}
+
+.nav-links {
+  height: 80%;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.nav-item {
+  height: 80px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+  gap: 10px;
+}
+
+.nav-item:hover {
+  background-image: linear-gradient(
+    to right,
+    #4356ff,
+    #4a4eff,
+    #5645ff,
+    #6836ff,
+    #7928ff,
+    #8b1aff
+  );
+}
+
+/* --------------Login----------------- */
+.Login {
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  top: 90px;
+}
+
+.headphone-png {
+  width: 70px;
+  height: 70px;
+}
+
+.logo-title {
+  color: white;
+  font-size: 100px;
+}
+
+.login-card {
+  width: 350px;
+  height: 300px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-input {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 50px;
+  text-align: center;
+}
+
+.login-input:focus {
+  box-shadow: 0 0 5px 0;
+  outline: none;
+}
+
+.login-button {
+  padding: 10px 60px;
+  border-radius: 50px;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    #4356ff,
+    #4a4eff,
+    #5645ff,
+    #6836ff,
+    #7928ff,
+    #8b1aff
+  );
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  transition: 0.4s;
+}
+
+.login-button:active {
+  scale: 0.95;
+}
+
+.login-button:disabled {
+  background-image: linear-gradient(to right, #c9c9c9, #616161, #474747);
+  color: rgb(63, 62, 62);
+  scale: 0.95;
+}
+
+/* --------------SearchContent----------------- */
+.SearchContent {
+  margin-bottom: 32px;
+}
+
+.search-container {
+  margin-top: 85px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.search-input {
+  width: 500px;
+}
+
+/* --------------Albums----------------- */
+.albums-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.albums-container > p:nth-child(1) {
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.albums-container > p:nth-child(2) {
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.AlbumCard {
+  width: 55%;
+  display: flex;
+  gap: 12px;
+  border-radius: 8px;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    to right,
+    #4356ff,
+    #4a4eff,
+    #5645ff,
+    #6836ff,
+    #7928ff,
+    #8b1aff
+  );
+}
+
+.AlbumCard > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+}
+
+.AlbumCard > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  height: 50%;
+  width: 60%;
+}
+
+.album-content-text {
+  color: white;
+  font-weight: 500;
+}
+
+.link {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* --------------AlbumContent----------------- */
+.AlbumContent {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.album-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.album-info-text > p:nth-child(1) {
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.album-info-text > p:nth-child(2) {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.album-music-list {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+/* --------------MusicCard----------------- */
+.MusicCard {
+  display: flex;
+  font-size: 20px;
+  border-radius: 8px;
+  color: white;
+  height: 15vh;
+  width: 50vw;
+  align-items: center;
+  justify-content: space-around;
+  background-image: linear-gradient(
+    to right,
+    #4356ff,
+    #4a4eff,
+    #5645ff,
+    #6836ff,
+    #7928ff,
+    #8b1aff
+  );
+}
+
+.MusicCard p {
+  display: flex;
+  justify-content: center;
+  width: 15vw;
+}
+
+.favorite-container {
+  width: 10vw;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* --------------FavoriteContent----------------- */
+.FavoriteContent {
+  margin-top: 70px;
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-favorite {
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+/* --------------Footer----------------- */
+.Footer {
+  position: absolute;
+  width: 100%;
+  bottom: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 500;
 }
