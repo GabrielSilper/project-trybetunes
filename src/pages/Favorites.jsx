@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import FavoriteContent from "../components/FavoriteContent";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import React, { Component } from 'react';
+import FavoriteContent from '../components/FavoriteContent';
+import Header from '../components/Header';
 
 export default class Favorites extends Component {
   state = {
@@ -13,10 +12,10 @@ export default class Favorites extends Component {
   };
 
   render() {
-    const { isLoadingContent, isLoading } = this.state;
+    const { isLoadingContent } = this.state;
     return (
       <div data-testid="page-favorites">
-        <Header changeLoadContent={this.changeLoadContent} />
+        <Header changeLoadContent={ this.changeLoadContent } />
         {!isLoadingContent && <FavoriteContent />}
       </div>
     );
