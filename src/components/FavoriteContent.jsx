@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { getFavoriteSongs } from "../services/favoriteSongsAPI";
-import Loading from "./Loading";
-import MusicCard from "./MusicCard";
+import React, { Component } from 'react';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+import Loading from './Loading';
+import MusicCard from './MusicCard';
 
 export default class FavoriteContent extends Component {
   state = {
@@ -25,7 +25,7 @@ export default class FavoriteContent extends Component {
   favoriteList = () => {
     const { favoriteSongs } = this.state;
     return favoriteSongs.map((song) => (
-      <MusicCard key={song.trackId} song={song} />
+      <MusicCard key={ song.trackId } song={ song } />
     ));
   };
 
@@ -39,7 +39,7 @@ export default class FavoriteContent extends Component {
           <Loading />
         ) : (
           <div className="FavoriteContent">
-            <h1 style={{ color: "white" }}>Músicas Favoritas:</h1>
+            <h1 style={ { color: 'white' } }>Músicas Favoritas:</h1>
             {verifyContent ? (
               empty
             ) : (
